@@ -352,7 +352,7 @@ export const CycleMob = state => {
       ...state,
       mob,
     },
-    effectsToRun,
+    ...effectsToRun,
   ];
 };
 
@@ -604,6 +604,41 @@ export const StartTimer = (state, { timerStartedAt, timerDuration }) => [
     timerDuration,
   }),
 ];
+
+export const Skip = (state, { timerDuration }) => {
+  console.log("action - Next");
+  if (state.mob.length === 0) {
+    return state;
+  }
+
+  const effectsToRun = [
+    effects.CompleteTimer({
+      websocket: state.websocket,
+    }),
+    effects.andThen({
+      action: CycleMob, // eslint-disable-line no-use-before-define
+      props: { },
+    }),
+    effects.andThen({
+      action: StartTimer, // eslint-disable-line no-use-before-define
+      props: { 
+        timerStartedAt: Date.now(),
+        timerDuration
+      },
+    }),
+  ];
+
+  const nextState = {
+    ...state,
+    timerStartedAt: null,
+    timerDuration: 0
+  };
+
+  return [
+    nextState,
+    ...effectsToRun,
+  ];
+};
 
 export const SetAllowNotification = (
   state,
