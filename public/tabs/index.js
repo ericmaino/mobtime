@@ -63,7 +63,7 @@ export const tabs = (props) => h(
           props.mob.length > 0 &&
           badge({}, text(props.mob.length.toString())),
       },
-      text('Mob'),
+      text('Ensemble'),
     ),
     tab(
       {

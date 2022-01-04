@@ -14,7 +14,7 @@ const defaultTimer = {
   mob: [],
   goals: [],
   settings: {
-    mobOrder: 'Navigator,Driver',
+    mobOrder: 'Active,Next',
     duration: 5 * 60 * 1000,
   },
 };

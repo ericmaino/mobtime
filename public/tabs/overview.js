@@ -14,7 +14,7 @@ export const overview = props =>
             type: 'button',
             onclick: () => [actions.SetTimerTab, 'mob'],
           },
-          text('Edit Mob'),
+          text('Edit Ensemble'),
         ),
       },
       text("Who's Up"),

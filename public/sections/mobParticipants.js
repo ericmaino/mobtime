@@ -18,7 +18,7 @@ export const mobParticipants = props => {
 
   const items = Array.from({ length }, (_, index) => ({
     ...(props.mob[index] || {}),
-    position: mobOrder[index] || 'mob',
+    position: mobOrder[index] || 'peer',
   }));
 
   return section({}, [

@@ -25,7 +25,7 @@ export const header = () =>
             'text-2xl': true,
           },
         },
-        text('mobtime'),
+        text('ensemble timer'),
       ),
     ],
   );

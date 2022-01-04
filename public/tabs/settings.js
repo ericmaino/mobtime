@@ -95,7 +95,7 @@ export const settings = props =>
           },
         }),
 
-        h('div', {}, text('Mob Roles/Order')),
+        h('div', {}, text('Ensemble Roles/Order')),
         h(
           'div',
           {
